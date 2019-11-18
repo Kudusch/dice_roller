@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="rwdgrid.css">
+<link rel="stylesheet" href="main.css">
+<script src="jquery-3.4.1.min.js"></script>
+<script src="main.js"></script>
+</head>
+<body>
+    <div class="grid-12">
+    <table>
+    <thead>
+        <tr>
+            <th colspan="4">Dice</th>
+            <th colspan="2">Modifier</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="d2">
+            <td class="name">d2</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            
+            
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="0" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d4">
+            <td class="name">d4</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d6">
+            <td class="name">d6</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d8">
+            <td class="name">d8</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d10">
+            <td class="name">d10</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d12">
+            <td class="name">d12</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d20">
+            <td class="name">d20</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+        <tr id="d100">
+            <td class="name">d100</td>
+            <td><button class="plus">+</button></td>
+            <td><span class="count">0</span></td>
+            <td><button class="minus">-</button></td>
+            <td>
+                <div class="modifier-sign">
+                    <div class="modifier-plus" style="float: right;">+</div>
+                    <div class="modifier-minus" style="float: left;">-</div>
+                </div>
+            </td>
+            <td class="modifier-value">
+                <input type="number" name="quantity" min="1" max="5" value="0">
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    </div>
+    <div class="grid-12">
+        <p><pre id="dice_output"></pre></p>
+        <button class="hidden" id="roll_btn">Roll</button><br><br>
+        <p><pre id="roll_output"></pre></p>
+    </div>
+</body>
+</html>
