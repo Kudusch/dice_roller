@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th colspan="4">Dice</th>
-            <th colspan="2">Modifier</th>
+            <th colspan="1">Modifier</th>
         </tr>
     </thead>
     <tbody>
@@ -23,16 +23,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            
-            
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="0" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d4">
@@ -40,14 +32,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d6">
@@ -55,14 +41,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d8">
@@ -70,14 +50,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d10">
@@ -85,14 +59,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d12">
@@ -100,14 +68,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d20">
@@ -115,14 +77,8 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
         <tr id="d100">
@@ -130,23 +86,18 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td>
-                <div class="modifier-sign">
-                    <div class="modifier-plus" style="float: right;">+</div>
-                    <div class="modifier-minus" style="float: left;">-</div>
-                </div>
-            </td>
-            <td class="modifier-value">
-                <input type="number" name="quantity" min="1" max="5" value="0">
+            <td class="modifier-value half">
+                <input type="number" name="quantity" min="-99" max="99" value="0">
             </td>
         </tr>
     </tbody>
     </table>
     </div>
     <div class="grid-12">
-        <p><pre id="dice_output"></pre></p>
-        <button class="hidden" id="roll_btn">Roll</button><br><br>
-        <p><pre id="roll_output"></pre></p>
+        <button class="half" id="roll_btn">Roll</button><br><br>
+        <div id="dice_output"></div>
+        <hr>
+        <div id="roll_output"></div>
     </div>
 </body>
 </html>

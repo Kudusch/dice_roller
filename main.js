@@ -42,19 +42,52 @@ $(document).ready(function() {
         return(out);
     };
 
+    function max_roll(d) {
+        if (d == "d2") {
+            d = 2;
+        } else if (d == "d4") {
+            d = 4;
+        } else if (d == "d6") {
+            d = 6;
+        } else if (d == "d8") {
+            d = 8;
+        } else if (d == "d10") {
+            d = 10;
+        } else if (d == "d12") {
+            d = 12;
+        } else if (d == "d20") {
+            d = 20;
+        } else if (d == "d100") {
+            d = 100;
+        }
+        return(d);
+    };
+
     function prepare_dice() {
         $("#dice_output").text("");
+        var lines = "";
+        var dice = {};
         $("tbody tr").each(function() {
             count = $(this).find(".count").text();
             if (count > 0) {
-                dice = $(this).attr("id");
-                modifier_sign = $(this).find(".modifier-sign").find(".selected").text();
+                die = $(this).attr("id");
                 modifier_value = $(this).find(".modifier-value").find("input").val();
-                $("#dice_output").text($("#dice_output").text() + "\n" + count + dice + " " + modifier_sign + modifier_value);
-                $("#roll_btn").removeClass("hidden");
+                modifier_value = (modifier_value<=0?"":"+") + modifier_value;
+                modifier_value = (modifier_value=="0"?"":modifier_value);
+                lines = lines + "<p>" + count + die + modifier_value + "</p>";
+                dice[die] = {"count":count, modifier:modifier_value}
+            }
+            $("#dice_output").html(lines);
+            if (lines == "") {
+                $("#roll_btn").addClass("half");
+            } else {
+                $("#roll_btn").removeClass("half");
             }
         });
+        return(dice);
     };
+
+    const sum = arr => arr.reduce((a,b) => a + b, 0)
     
     $(".plus").click(function() {
         var c = Number($(this).closest("tr").find(".count").text());
@@ -70,36 +103,26 @@ $(document).ready(function() {
     });
 
     $(".modifier-value").click(function() {
-        if (!$(this).closest("tr").find(".modifier-plus").hasClass("selected")) {
-            if (!$(this).closest("tr").find(".modifier-minus").hasClass("selected")) {
-                $(this).closest("tr").find(".modifier-plus").click();
-            }
+        if ($(this).find("input").val() == 0) {
+            $(this).addClass("half");
+        } else {
+            $(this).removeClass("half");
         }
         prepare_dice();
     });
-    $(".modifier-plus").click(function() {
-        if ($(this).hasClass("selected")) {
-            $(this).css("background-color", "rgba(0, 255, 0, 0.3)");
-            $(this).removeClass("selected");
-        } else {
-            $(this).css("background-color", "rgba(0, 255, 0, 1)");
-            $(this).addClass("selected");
-        }
 
-        $(this).parent().find(".modifier-minus").css("background-color", "rgba(255, 0, 0, 0.3)")
-        $(this).parent().find(".modifier-minus").removeClass("selected");
-        prepare_dice();
-    });
-    $(".modifier-minus").click(function() {
-        if ($(this).hasClass("selected")) {
-            $(this).css("background-color", "rgba(255, 0, 0, 0.3)");
-            $(this).removeClass("selected");
-        } else {
-            $(this).css("background-color", "rgba(255, 0, 0, 1)");
-            $(this).addClass("selected");
+    $("#roll_btn").click(function() {
+        dice = prepare_dice();
+        $("#roll_output").html("");
+        var lines = "";
+        var roll_total = 0;
+        for (var i in dice) {
+            roll = dice_roll(i, dice[i]["count"]);
+            roll_sum = parseInt(sum(roll));
+            roll_total += roll_sum + parseInt((dice[i]["modifier"]==""?0:dice[i]["modifier"]));
+            roll = roll.map(function style_roll(n) {if (n == max_roll(i)) {return("<span class='max'>" + n + "</span>");} else if (n == 1) {return("<span class='min'>" + n + "</span>");} else {return(n);}})
+            lines += "<p>" + i + ": " + roll.join(", ") + " = " + roll_sum + dice[i]["modifier"] + "</p>"
         }
-        $(this).parent().find(".modifier-plus").css("background-color", "rgba(0, 255, 0, 0.3)")
-        $(this).parent().find(".modifier-plus").removeClass("selected");
-        prepare_dice();
+        $("#roll_output").html(lines + "<p>" + roll_total + "</p>");
     });
 });
