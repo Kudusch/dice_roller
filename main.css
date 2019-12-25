@@ -1,14 +1,40 @@
 body {
-    font-family: monospace;
+    font-family: "Courier", monospace;
+    touch-action: manipulation;
+}
+
+table {
+    width: 100%;
 }
 
 button {
     cursor: pointer;
     padding: 5px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    width: 50px;
+    height: 50px;
 }
 
-.plus, .minus {
-    width: 20px;
+#roll_btn {
+    width: 45%;
+    height: 100%;
+    float: right;
+    font-family: "Courier", monospace!important;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#dice_output {
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+
+#roll_history {
+}
+
+#roll_output {
 }
 
 .modifier-value input {
@@ -16,20 +42,34 @@ button {
     padding-left: 5px;
 }
 
+td:nth-child(4) {
+    border-right: 2px dotted gray;
+}
+
 .half {
     opacity: 0.3;
+}
+.negative {
+    color: red;
+}
+.positive {
+    color: green;
 }
 
 .count {
 }
 
 .name {
-    text-align: right;
     padding-right: 10px;
 }
 
 td {
     padding-bottom: 5px;
+    text-align: center;
+}
+
+th {
+    padding-bottom: 20px;
 }
 
 .max {
@@ -38,4 +78,9 @@ td {
 
 .min {
     color: red;
+}
+
+hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }

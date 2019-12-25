@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content = "width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
 <title></title>
 <link rel="stylesheet" href="rwdgrid.css">
 <link rel="stylesheet" href="main.css">
@@ -13,8 +15,9 @@
     <table>
     <thead>
         <tr>
-            <th colspan="4">Dice</th>
-            <th colspan="1">Modifier</th>
+            <th colspan="1">Dice</th>
+            <th colspan="3">Count</th>
+            <th colspan="3">Modifier</th>
         </tr>
     </thead>
     <tbody>
@@ -23,80 +26,81 @@
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d4">
             <td class="name">d4</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d6">
             <td class="name">d6</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d8">
             <td class="name">d8</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d10">
             <td class="name">d10</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d12">
             <td class="name">d12</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d20">
             <td class="name">d20</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
         <tr id="d100">
             <td class="name">d100</td>
             <td><button class="plus">+</button></td>
             <td><span class="count">0</span></td>
             <td><button class="minus">-</button></td>
-            <td class="modifier-value half">
-                <input type="number" name="quantity" min="-99" max="99" value="0">
-            </td>
+            <td><button class="mod-plus half">+</button></td>
+            <td><span class="mod-value half">±0</span></td>
+            <td><button class="mod-minus half">-</button></td>
         </tr>
     </tbody>
     </table>
     </div>
-    <div class="grid-12">
+    <div class="grid-12" style="background-color: rgba(0, 0, 0, 0.25);">
+        <div id="dice_output">No dice selected</div>
         <button class="half" id="roll_btn">Roll</button><br><br>
-        <div id="dice_output"></div>
-        <hr>
+    </div>
+    <div class="grid-12">
         <div id="roll_output"></div>
     </div>
 </body>
